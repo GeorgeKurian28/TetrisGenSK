@@ -24,6 +24,7 @@ public class Main extends Application {
     private GraphicsContext gc;
     private KeyCode keycode = KeyCode.K;
     private Controller controller = new Controller();
+    private BlockFactory blockFactory = new BlockFactory();
 
     private ArrayList<Block> activeBlockList = new ArrayList<>(); // This holds the current block moving. When block active is false remove from this list and add to another.
     private ArrayList<Block> nonActiveBlockList = new ArrayList<>(); // List to hold all non-active blocks
@@ -78,10 +79,12 @@ public class Main extends Application {
 
         // todo: Test code. Blocks should be created and added to the list in the BlockFactory
         if(activeBlockList.size() < 1) {
+            activeBlockList = blockFactory.getActiveBlockList();
+            /*
             activeBlockList.add(new Block(1,5, 0, true)); // todo: need to add shape field to pass into controller and rotate as needed.
             activeBlockList.add(new Block(2, 6, 0, true));
             activeBlockList.add(new Block(3, 7, 0, true));
-            activeBlockList.add(new Block(4, 8, 0, true));
+            activeBlockList.add(new Block(4, 8, 0, true));*/
         }
 
         // Rotate active block shape
@@ -103,6 +106,7 @@ public class Main extends Application {
         activeBlockList.forEach(j -> {
             if(!j.isActive()) nonActiveBlockList.add(j);
         });
+
 
 
         // Move blocks down

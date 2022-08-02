@@ -49,5 +49,9 @@ public class Block {
     public Color getColor() {
         return color;
     }
+    @Override
+    public String toString(){
+        return blockNumber + "  X - " + getX() + "  y - " + getY();
+    }
 }
 
