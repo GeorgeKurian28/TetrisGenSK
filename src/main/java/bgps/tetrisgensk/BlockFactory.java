@@ -31,7 +31,7 @@ public class BlockFactory {
     }
 
     // Todo: Needs to randomly select shape and place blocks into activeBlockList.
-    public ArrayList<Block> activeBlockList(){
+    public ArrayList<Block> getActiveBlockList(){
 
         ArrayList<Block> list = new ArrayList<>();
         Integer[][] shape = shapeMap.get((int)(Math.floor(Math.random()*5))+1);
