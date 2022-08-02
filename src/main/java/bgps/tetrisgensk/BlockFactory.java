@@ -9,12 +9,15 @@ public class BlockFactory {
 
     private Map<Integer, Integer[][]> shapeMap = new HashMap<>();// Create Hashmap of shapes.
 
-    public BlockFactory(){
+    {
         setShapeMap(1,0,0,1,0,1,1,2,0);//T
         setShapeMap(2,0,0,1,0,1,1,0,1);//Square
         setShapeMap(3,0,0,1,0,2,0,3,0);//Stick
         setShapeMap(4,0,0,0,1,0,2,1,0);//L
         setShapeMap(5,0,0,1,0,1,1,2,1);//Dog
+    }
+
+    public BlockFactory(){
     }
 
     public  void setShapeMap(Integer key,int ...values){
@@ -35,7 +38,7 @@ public class BlockFactory {
 
         ArrayList<Block> list = new ArrayList<>();
         Integer[][] shape = shapeMap.get((int)(Math.floor(Math.random()*5))+1);
-        int postion = (int)Math.floor(Math.random()*6);
+        int postion = (int)Math.floor(Math.random()*8);
 
         list.add(new Block(1,shape[0][0]+postion,shape[0][1],true));
         list.add(new Block(2,shape[1][0]+postion,shape[1][1],true));
